@@ -1,5 +1,5 @@
 # About
-A Python repo that is (truly) self-contained.
+This is a sample self-contained Python repo for my blog post [Self-Contained Python Repo](https://harrywang.me/repo).
 
 Create `.env` file in project and put your OpenAI key as follows:
 
