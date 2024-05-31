@@ -25,21 +25,21 @@ self-contained-python-repo/train_mnist.py
 
 ## 3. Step by step guide
 
-### setup environment
-#### clone the git repo from GitHub (here I cloned the repo under path: ~/Desktop): 
+### 3.1 setup environment
+#### 3.2 clone the git repo from GitHub (here I cloned the repo under path: ~/Desktop): 
 ```bash
 $ git clone https://github.com/harrywang/self-contained-python-repo.git
 ```
    
-#### To test the repo, first make a virtual environment. 
+#### 3.3 To test the repo, first make a virtual environment. 
 
-##### If using conda, which better at working with different python versions, and I choose python 3.9 here:
+##### 3.3.1 If using conda, which better at working with different python versions, and I choose python 3.9 here:
 ```bash
 $ conda create -n repo_test python=3.9
 $ conda activate repo_test
 ```
 
-##### If use venv, you should be careful if you have conda in the environment.
+##### 3.3.2 If use venv, you should be careful if you have conda in the environment.
 You should always specify the python version when using python, since the default python comes with conda.
 In my machine, python3.10 is the version that is different from conda.
 ```bash
@@ -48,18 +48,20 @@ $ source venv/bin/activate
 ```
 
 
-#### Make sure you are under the right path `~/self-contained-python-repo`, then you can download required packages using pip (here the server default uses aliyun mirror, or you can try Tingshua Mirror if you are in maindland China:` pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt`):
+#### 3.4 Download required packages using pip
+Make sure you are under the right path `~/self-contained-python-repo`, then you can download required packages using pip (here the server default uses aliyun mirror, or you can try Tingshua Mirror if you are in maindland China:` pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt`):
 ```bash
 $ pip install -r requirements.txt
 ```
 
-#### Before really running the code, make sure all the mentioning directories in the script existed. 
+#### 3.5 Ensure all directories used in the script existed
+Before really running the code, make sure all the mentioned directories in the script exist. 
 
 In this specific example, two most straightfoward ways are:
 
-##### directly create the folder `./contents` under `/self-contained-python-repo`
+##### 3.5.1 directly create the folder `./contents` under `/self-contained-python-repo`
 
-##### In script `train_mnist.py`, you should add the following codes:
+##### 3.5.2 In script `train_mnist.py`, you should add the following codes:
 
 ```
 import os
@@ -69,18 +71,17 @@ os.makedirs("./contents", exist_ok=True)
 
 before `save_image(grid, f"./contents/ddpm_sample_{i}.png")`
 
-#### Run with nohup (a way of running script in background, which is especially essential for using sever, since it would not be influenced by connection issue).
+#### 3.6 Run with nohup (a way of running script in background, which is especially essential for using server, since it would not be influenced by connection issues).
 
-##### for conda
+##### 3.6.1 for conda
 ```bash
 $ nohup python train_mnist.py > log.log&
 ```
 
-##### for venv
+##### 3.6.2 for venv
 ```bash
 $ nohup python3.10 train_mnist.py > log.log&
 ```
-
 
 The `log.log` is the log file, it can be found via `cat log.log ` if you did not see it (while it appears at the current working dictory by default);
 
