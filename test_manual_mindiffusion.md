@@ -87,7 +87,7 @@ The `log.log` is the log file, it can be found via `cat log.log ` if you did not
 
 You can also check the running status using 
 ```bash
-$ ps -ax | train_mnist.py
+$ ps -ax
 ```
 The command should return the pid.
 
