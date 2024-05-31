@@ -33,7 +33,7 @@ $ git clone https://github.com/harrywang/self-contained-python-repo.git
    
 2. To test the repo, first make a virtual environment. 
 
-a. If use conda, conda works with different python versions better, and I choose python 3.9 to test. :
+a. If using conda, which better at working with different python versions, and I choose python 3.9 here:
 ```bash
 $ conda create -n repo_test python=3.9
 $ conda activate repo_test
