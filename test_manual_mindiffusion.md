@@ -82,8 +82,6 @@ $ nohup python3.10 train_mnist.py > log.log&
 ```
 
 
-
-
 The `log.log` is the log file, it can be found via `cat log.log ` if you did not see it (while it appears at the current working dictory by default);
 
 You can also check the running status using 
@@ -100,4 +98,4 @@ $ kill pid
 ## 4. Result
 After running, you can check sample img under folder `./contents`, and the model is saved as `ddpm_mnist.pth`.
 
-With single `A100-SXM4-40GB`, it takes 
+With single `A100-SXM4-40GB`, it takes 1 to 2 minutes for each epoch.
