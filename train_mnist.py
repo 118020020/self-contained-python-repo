@@ -9,6 +9,8 @@ from torchvision.datasets import MNIST
 from torchvision import transforms
 from torchvision.utils import save_image, make_grid
 
+import os
+
 
 def ddpm_schedules(beta1: float, beta2: float, T: int) -> Dict[str, torch.Tensor]:
     """
@@ -162,6 +164,9 @@ def train_mnist(n_epoch: int = 100, device="cuda:0") -> None:
         with torch.no_grad():
             xh = ddpm.sample(16, (1, 28, 28), device)
             grid = make_grid(xh, nrow=4)
+
+            # create folder if it does not exit
+            os.makedirs("./contents", exist_ok=True)
             save_image(grid, f"./contents/ddpm_sample_{i}.png")
 
             # save model

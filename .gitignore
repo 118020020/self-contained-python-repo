@@ -164,3 +164,6 @@ data/
 
 # large model files
 *.pth
+
+# other savings
+ddpm*.png
